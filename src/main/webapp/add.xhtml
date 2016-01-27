@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="content">
+		<h:form id="studentForm">
+			<h:panelGrid columns="2">
+
+				<h:outputText value="#{personFirstNameLabel}" />
+				<h:inputText id="imie" value="#{studentnBean.student.imie}"
+					required="#{true}" />
+
+				<h:outputText value="#{personFirstNameLabel}" />
+				<h:inputText id="nazwisko" value="#{studentnBean.student.nazwisko}"
+					required="#{true}" />
+
+				<h:outputText value="#{personPinLabel}" />
+				<h:inputText id="pesel" value="#{studentnBean.student.pesel}" />
+			</h:panelGrid>
+
+			<h:commandButton value="#{personFormOKButton}"
+				action="#{studentnBean.addStudent}" />
+
+			<h:panelGrid>
+				<h:messages for="" />
+				<h:messages id="messages" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid>
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>
